@@ -17,10 +17,10 @@ package classpasajeros;
 public class Pasajeros {
 
     private String nombre;
-    private int numeroPasaporte;
+    private String numeroPasaporte;
     private String nacionalidad;
 
-    public Pasajeros(String nombre, int numeroPasaporte, String nacionalidad) {
+    public Pasajeros(String nombre, String numeroPasaporte, String nacionalidad) {
         this.nombre = nombre;
         this.numeroPasaporte = numeroPasaporte;
         this.nacionalidad = nacionalidad;
@@ -34,11 +34,11 @@ public class Pasajeros {
         this.nombre = nombre;
     }
 
-    public int getNumeroPasaporte() {
+    public String getNumeroPasaporte() {
         return numeroPasaporte;
     }
 
-    public void setNumeroPasaporte(int numeroPasaporte) {
+    public void setNumeroPasaporte(String numeroPasaporte) {
         this.numeroPasaporte = numeroPasaporte;
     }
 
