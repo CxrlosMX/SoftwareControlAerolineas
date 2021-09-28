@@ -28,29 +28,31 @@ public class Vuelos {
     private Pasajeros[] pasajeros;
     private int numRealReservados;
 
-    public Vuelos(String ciudadOrigen, String ciudadDestino, double precioBoleto, int numMaxPasajeros, int numRealReservados) {
+    public Vuelos(String ciudadOrigen, String ciudadDestino, double precioBoleto, int numMaxPasajeros) {
         this.identificador = generarIdentificador();
         this.ciudadOrigen = ciudadOrigen;
         this.ciudadDestino = ciudadDestino;
         this.precioBoleto = precioBoleto;
         this.numMaxPasajeros = numMaxPasajeros;
         this.pasajeros = new Pasajeros[numMaxPasajeros];
-        this.numRealReservados = numRealReservados;
+        this.numRealReservados = 0;
     }
     /*
      Tendremos un método para agregar un pasajero a nuestra lista
      */
 
     public void addPasajero(Pasajeros pasajero) {
-        if (pasajeros[numMaxPasajeros - 1] == null) {
-            boolean encontrado = false;
-            for (int i = 0; i < pasajeros.length && !encontrado; i++) {
-                if (pasajeros[i] == null) {
-                    pasajeros[i] = pasajero;
-                    JOptionPane.showMessageDialog(null, "Pasajero" + pasajero.getNombre() + "agregado con exito", "Pasajero Agregado", 1);
-                    encontrado = true;
-                }
-            }
+        if (pasajeros[numMaxPasajeros-1] == null) {
+            //boolean encontrado = false;
+            //for (int i = 0; i < pasajeros.length && !encontrado; i++) {
+            // if (pasajeros[i] == null) {
+            //    pasajeros[i] = pasajero;
+            pasajeros[numRealReservados] = pasajero;
+            JOptionPane.showMessageDialog(null, "Pasajero " + pasajero.getNombre() + " agregado con exito", "Pasajero Agregado", 1);
+            numRealReservados++;
+                 //   encontrado = true;
+            // }
+            //}
         } else {
             JOptionPane.showMessageDialog(null, "Registro de vuelos lleno", "Registro lleno", 2);
         }
@@ -61,7 +63,7 @@ public class Vuelos {
      2.-Busqueda por Numero de pasaporte
      */
 
-    public Pasajeros buscarPasajeroPoc(int n) {
+    public Pasajeros buscarPasajero(int n) {
         Pasajeros p = null;
         if (pasajeros[0] != null) {
             if (n >= 1 && n <= numMaxPasajeros) {
@@ -88,11 +90,11 @@ public class Vuelos {
      Mètodo para buscar por pasaporte
      */
 
-    public Pasajeros buscarPasajeroPasaporte(String pasaporte) {
+    public Pasajeros buscarPasajero(String pasaporte) {
         Pasajeros p = null;
         if (pasajeros[0] != null) {
             boolean encontrado = false;
-            for (int i = 0; i < pasajeros.length && !encontrado && pasajeros[i] != null; i++) {
+            for (int i = 0; i < numRealReservados && !encontrado; i++) {
                 if (pasajeros[i].getNumeroPasaporte().equals(pasaporte)) {
                     encontrado = true;
                     JOptionPane.showMessageDialog(null, "Pasajero encontrado", "Pasajero encontrado", 1);
