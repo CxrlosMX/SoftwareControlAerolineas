@@ -6,6 +6,7 @@
 package aplicacion;
 
 import classpasajeros.Pasajeros;
+
 import metodos.Metodos;
 import vuelosclass.Vuelos;
 
@@ -21,7 +22,7 @@ import vuelosclass.Vuelos;
 public class Aplicacion {
 
     public static void main(String[] args) {
-        Vuelos v=new Vuelos("Oaxaca", "México", 300, 10);
+      /*  Vuelos v=new Vuelos("Oaxaca", "México", 300, 10);
         Pasajeros p1=new Pasajeros("Luis","HJI8", "Méxicana");
         Pasajeros p2=new Pasajeros("Santi", "SD45", "Argentina");
         Pasajeros p3=new Pasajeros("Santi", "SD45", "Argentina");
@@ -30,10 +31,14 @@ public class Aplicacion {
         v.addPasajero(p3);
        for (Pasajeros  i: v.getPasajeros()) {
             System.out.println(((i!=null)?i:""));
-        }
+        }*/
        // Pasajeros p=v.buscarPasajeroPc(2);
        // if(p!=null);
- 
+        Vuelos[] lista=new Vuelos[2];
+        Vuelos v1=new Vuelos("Oaxaca", "Mèxico", 100, 20);
+        Vuelos v2=new Vuelos("Oaxaca", "Mèxico", 100, 20);
+        Vuelos v3=new Vuelos("Oaxaca", "Mèxico", 100, 20);
+        
     }
 
    
