@@ -6,6 +6,7 @@
 package aplicacion;
 
 import classpasajeros.Pasajeros;
+import companiaclass.Company;
 
 import metodos.Metodos;
 import vuelosclass.Vuelos;
@@ -38,6 +39,9 @@ public class Aplicacion {
         Vuelos v1=new Vuelos("Oaxaca", "Mèxico", 100, 20);
         Vuelos v2=new Vuelos("Oaxaca", "Mèxico", 100, 20);
         Vuelos v3=new Vuelos("Oaxaca", "Mèxico", 100, 20);
+        
+        Company compania=new Company("AeroMexico");
+        
         
     }
 

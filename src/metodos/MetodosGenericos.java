@@ -12,7 +12,7 @@ package metodos;
  */
 public interface MetodosGenericos<T> {
 
-    void addObject(T objeto, T[] lista);
+    void addObject(T objeto);
 
     T getObj(int i);
     T getObj(String i);

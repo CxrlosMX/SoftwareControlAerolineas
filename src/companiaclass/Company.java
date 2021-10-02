@@ -43,12 +43,12 @@ public class Company implements MetodosGenericos<Vuelos> {
      */
 
     @Override
-    public void addObject(Vuelos valor, Vuelos[] arreglo) {
-        if (arreglo[arreglo.length - 1] == null) {
+    public void addObject(Vuelos valor) {
+        if (listaVuelos[listaVuelos.length - 1] == null) {
             boolean encontrado = false;
-            for (int i = 0; i < arreglo.length && !encontrado; i++) {
-                if (arreglo[i] == null) {
-                    arreglo[i] = valor;
+            for (int i = 0; i < listaVuelos.length && !encontrado; i++) {
+                if (listaVuelos[i] == null) {
+                    listaVuelos[i] = valor;
                     numVuelosProximos++;
                     JOptionPane.showMessageDialog(null, "Vuelo Registrado con Exito", "Registrado con exito", 1);
                     encontrado = true;
@@ -64,7 +64,7 @@ public class Company implements MetodosGenericos<Vuelos> {
         if (listaVuelos[0] != null) {
             if (i >= 1 && i <= listaVuelos.length) {
                 if (listaVuelos[i] != null) {
-                    return listaVuelos[i];
+                    return listaVuelos[i-1];
                 }
                 /*else {
                  JOptionPane.showMessageDialog(null, "Vuelo no encontrado", nombre, i);
@@ -81,10 +81,10 @@ public class Company implements MetodosGenericos<Vuelos> {
     @Override
     public Vuelos getObj(String id) {
         if (listaVuelos[0] != null) {
-            boolean encontrado = false;
-            for (int i = 0; i < listaVuelos.length && !encontrado && listaVuelos[i] != null; i++) {
+
+            for (int i = 0; i < listaVuelos.length && listaVuelos[i] != null; i++) {
                 if (listaVuelos[i].getIdentificador().equals(id)) {
-                    encontrado = true;
+
                     return listaVuelos[i];
                 }
             }
@@ -135,7 +135,7 @@ public class Company implements MetodosGenericos<Vuelos> {
 
     @Override
     public String toString() {
-        return "Nombre: " + nombre + "\nLista de Vuelos: " + valoresVuelos() + "\nNumero de Vuelos Proximos: " + numVuelosProximos;
+        return "Nombre Compañia: " + nombre + "\nLista de Vuelos: " + valoresVuelos() + "\nNumero de Vuelos Proximos: " + numVuelosProximos;
     }
 
 }
